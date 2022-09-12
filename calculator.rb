@@ -3,21 +3,32 @@
 #asks for two numbers
 #asks for the type of operation to perform: add, subtract, multiply or divide
 #displays the result
+
+
 def valid_number?(num)
-  num.to_i != 0
+  num.to_i.to_s == num
+end
+
+def float?(num)
+  num.to_f.to_s == num
+end
+
+def number?(num)
+  valid_number?(num) || float?(num)
 end
 
 def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+  operating = case op
+              when '1'
+                'Adding'
+              when '2'
+                'Subtracting'
+              when '3'
+                'Multiplying'
+              when '4'
+                'Dividing'            
+              end
+  operating              
 end
 
 puts ">> Welcome to Calculator! Enter your name:"
@@ -31,7 +42,7 @@ loop do
   end
 end
 
-puts "Hello, #{name}"
+puts "Hello, #{name.upcase}"
 
 loop do
 
@@ -40,7 +51,7 @@ loop do
     puts ">> Enter the first #"
     number1 = gets.chomp
 
-    if valid_number?(number1)
+    if number?(number1)
       break
     else
       puts ">> This is not a valid number"
@@ -52,7 +63,7 @@ loop do
     puts ">> Enter the second #"
     number2 = gets.chomp
 
-    if valid_number?(number2)
+    if number?(number2)
       break
     else
       puts ">> This is not a valid number"
@@ -72,7 +83,7 @@ loop do
     end
   end
 
-  puts ">> #{operation_to_message(operator)} the two numbers..."
+  puts "\n>> #{operation_to_message(operator)} the two numbers..."
   operator = operator.to_i
   number1 = number1.to_i
   number2 = number2.to_i
@@ -92,10 +103,10 @@ loop do
     puts ">> #{number1} / #{number2} = #{x}"
   end
 
-  puts ">> Do you want to perform another calculation?\n ('Y' or 'N')"
+  puts ">> Do you want to perform another calculation?\n\n('Y' or 'N')"
   answer = gets.chomp.upcase
 
   break unless answer.start_with?('Y')
 end
 
-puts ">> Goodbye!"
+puts ">> Goodbye :)"
