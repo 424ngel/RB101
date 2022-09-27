@@ -1,0 +1,70 @@
+
+
+Small Problems
+---------------
+Easy1
+
+SUM OF DIGITS :
+
+INPUT: positive integer
+OUTPUT: positive integer
+
+P/E: 
+- sum of the inputs digits 
+- EX) 23 --> 2 + 3 = 5 
+
+A: 
+- Separate the digits
+- Add the digits together
+_ Return the sum integer
+
+A/D:
+- Create an array of each digit
+- Use inject to sum all the digits
+- Return the sum
+
+_________________________________________________________________
+
+WHAT'S MY BONUS? :
+
+INPUT: (Integer,Boolean) 2 arguments
+OUTPUT: Positive Integer
+
+P/E:
+- Method that takes 2 arguments (Integer,Boolean)
+- The integer is the given salary
+- Objective is to calculate the 'bonus' (output)
+- If Boolean == true THEN 'bonus' should be half the salary
+- If Boolean == false THEN bonus = 0
+- EX ) calculate_bonus(2800 ,true) == 1400
+
+A:
+- If the boolean is true divide integer (salary) by two
+- then return the result ('bonus')
+- If boolean is false return 0
+
+A/D:
+- Create an if/else statement
+- true ---> bonus = integer/2
+  - return bonus
+- false ---> bonus = 0
+  - return bonus
+
+_________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
