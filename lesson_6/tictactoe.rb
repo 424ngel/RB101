@@ -1,4 +1,4 @@
-WINNING_LINES = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + #rows
+WINNING_LINES =   [[1, 2, 3], [4, 5, 6], [7, 8, 9]] + #rows
                   [[1, 4, 7], [2, 5, 8], [3, 6, 9]] + #cols
                   [[1, 5, 9], [3, 5, 7]]              #diag
 
@@ -24,12 +24,12 @@ end
 
 def initialize_board
   new_board = {}
-  (1..9).each {|num| new_board[num] = ' '}
+  (1..9).each { |num| new_board[num] = ' ' }
   new_board
 end
 
 def empty_spaces(brd)
-  brd.keys.select {|num| brd[num] == " "}
+  brd.keys.select { |num| brd[num] == " " }
 end
 
 def empty_board?(brd)
@@ -54,7 +54,7 @@ def player_move(brd)
   brd[num.to_i] = PLAYER_SYMBOL
 end
 
-def smart_move(brd,symbol)
+def smart_move(brd, symbol)
   moves = []
   numbers = empty_spaces(brd)
   WINNING_LINES.each do |line|
@@ -73,8 +73,8 @@ end
 def computer_move(brd)
   available_spaces = empty_spaces(brd)
 
-  defense = smart_move(brd,PLAYER_SYMBOL)
-  win_move = smart_move(brd,COMPUTER_SYMBOL)
+  defense = smart_move(brd, PLAYER_SYMBOL)
+  win_move = smart_move(brd, COMPUTER_SYMBOL)
  
   if defense.empty? && win_move.empty?
     choice = available_spaces.sample
